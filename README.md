@@ -1,2 +1,2 @@
 # PMT
-Blockchain based project scheduling application
+Blockchain-based project scheduling application
