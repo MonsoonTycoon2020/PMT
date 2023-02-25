@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTTP Request Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(/assets/rain_bg.jpeg);
+      }
+      
+      h1 {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card{
+        background-color: aquamarine;
+        border-radius: 25px;
+        margin: 2rem 25%;
+        border: 0.5rem outset grey;
+        padding: 1.5rem;
+      }
+      
+      label {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      input[type="text"],
+      input[type="email"], 
+      input[type="date"] {
+        font-family: Verdana, sans-serif;
+        padding: 0.5rem;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+        <h1>HTTP Request Form</h1>
+        <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="m0x" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="m@0x.io" required>
+        <label for="date">Transaction Date</label>
+        <input type="date" id="date" name="date" required>
+        <input type="submit" value="Send">
+        </form>
+    </div>
+    <script>
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // prevent the form from submitting
+
+        // get the form data
+        const formData = new FormData(event.target);
+
+        // send the HTTP POST request
+        fetch('https://example.com/api/user', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          // do something with the response data
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          // handle errors here
+          console.log("FORM DATA: \n");
+ 
+          for (const pair of formData.entries()) {
+            console.log(`${pair[0]}, ${pair[1]}`);
+          }
+
+        });
+      });
+    </script>
+  </body>
+</html>

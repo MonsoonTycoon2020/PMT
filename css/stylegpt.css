@@ -1,0 +1,157 @@
+/* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Header styles */
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+}
+
+/* Section styles */
+
+section {
+  padding: 20px;
+}
+
+/* About section styles */
+
+#about p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Experience section styles */
+
+#experience ul li {
+  margin-bottom: 20px;
+}
+
+#experience h3 {
+  margin-bottom: 10px;
+}
+
+#experience h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+#experience p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Education section styles */
+
+#education ul li {
+  margin-bottom: 20px;
+}
+
+#education h3 {
+  margin-bottom: 10px;
+}
+
+#education h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+#education p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Skills section styles */
+
+#skills ul li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Contact section styles */
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+#contact input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: #444;
+}

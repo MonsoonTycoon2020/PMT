@@ -1,0 +1,133 @@
+body{
+  border-color: coral;
+  color: greenyellow;
+  text-align: center;
+  font-family: monospace;
+/*    animation: mymove 10s infinite; */
+}
+
+.home-bg{
+  background-image: url(/assets/zenbg.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.bodybg{
+  border-radius: 25px;
+  background-color: whitesmoke;
+  opacity: .7;
+  color: black;
+  padding: 10px;
+}
+
+.glass-bg{
+  background-image: url(/assets/rain_bg.jpeg);
+}
+
+nav ul li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar{
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display:block;
+  overflow: hidden;
+  clear:both;
+  white-space: nowrap;
+  padding: 5px;
+  list-style: none;
+  background-color: #333;
+}
+
+li.nli{
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li.nli a:hover {
+  background-color: #111;
+}
+
+ul.mainul{
+    list-style: none;
+    text-align: center;
+}
+
+.header{
+  margin-top: 190px;
+}
+
+.card{
+  margin: 80px;
+  border-radius: 8px;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+li.mli:hover{
+  font-size: 150%;
+  font-weight: bold;
+  border: 5px solid black;
+  border-radius: 3px;
+  background-color: aqua;
+}
+
+#scrolltext{
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  display: block;
+}
+
+#scrollbar{
+/* animation properties */
+-moz-transform: translateX(100%);
+-webkit-transform: translateX(100%);
+transform: translateX(100%);
+
+-moz-animation: my-animation 15s linear infinite;
+-webkit-animation: my-animation 15s linear infinite;
+animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+/*@keyframes mymove{
+    0%{background-color: black;}
+    50%{background-color: goldenrod;}
+    100%{background-color: black;}
+}
+*/
