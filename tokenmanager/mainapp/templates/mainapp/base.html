@@ -1,0 +1,51 @@
+{% load static %}<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Token Management System{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <nav class="navbar is-fixed-top is-success" role="navigation" aria-label="main navigation">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarDashboard">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarDashboard" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item is-size-4" href="/"{% if request.path == '/' %} {% endif %}>Dashboard</a>
+                <a class="navbar-item is-size-4" href="/scheduled_transfer/"{% if request.path == '/scheduled_transfer/' %} {% endif %}>Transfer Asset</a>
+            </div>
+            <div class="navbar-end mr-6">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link is-size-4">
+                    Testing
+                  </a>
+                  <div class="navbar-dropdown">
+                  <a class="navbar-item is-size-4" href="/accounts/"{% if request.path == '/accounts/' %} {% endif %}>Accounts</a>
+                      <a class="navbar-item is-size-4" href="/wallets/"{% if request.path == '/wallets/' %} {% endif %}>Wallets</a>
+                      <a class="navbar-item is-size-4" href="/assets/"{% if request.path == '/assets/' %} {% endif %}>Assets</a>
+                      <a class="navbar-item is-size-4" href="/search/"{% if request.path == '/search/' %} {% endif %}>Search</a>
+                  </div>
+                </div>
+            </div>
+              </div>
+        </div>
+    </nav>
+    <div class="body">
+        <div class="container mt-5">
+            <div class="columns is-mobile is-center">
+    
+                {% block body %}
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

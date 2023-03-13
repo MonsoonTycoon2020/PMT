@@ -1,0 +1,29 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Wallet page{% endblock %}
+{% block body %}
+
+<div class="column">
+  <h1 class="title is-size-4">Wallet Details Page</h1>
+  <table class="table"></table>
+    <p>Name: {{ wallet.name }}</p>
+    <p>ID: {{ wallet.wallet_id }}</p>
+    <p>Created: {{ wallet.created }}</p>
+
+  {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <span class="is-small has-text-grey-light">
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        </span>
+        {% endfor %}
+    </ul>
+  {% endif %}
+</table>
+  <h2>Wallet accounts</h2>
+  {% for account in wallet.walletaccount_set.all %}
+    <li><a href="/wallet-account/{{ wallet.wallet_id }}/{{ account.address }}">{{ account.address }}</a> : {{ account.balance }} microAlgos</li>
+  {% endfor %}
+  <br>
+  <a href="/create-wallet-account/{{ wallet.wallet_id }}/" class="title is-size-4 button is-success">Create Wallet Account</a>
+</div>
+{% endblock %}

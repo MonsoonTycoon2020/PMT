@@ -1,0 +1,39 @@
+{% extends 'mainapp/base.html' %}
+
+{% block body %}
+
+<div class="column">
+
+    <section class="box is-small mb-4">
+
+            <h1 class="title is-2">Asset Transfers</h1>
+
+    </section>
+    {% for transaction in transactions %}
+        <div class="box">
+            Transaction ID: {{transaction.result}}
+            <span class="is-small has-text-grey-light">
+                ( Transfer Amount: {{ transaction.amount }}, Sent by {{ transaction.user }}, for {{ transaction.receiver }} )
+            </span>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="column is-one-third">
+    <div class="block">
+        <div class="block">
+            <h2 class="title is-3">Schedule Asset Transfer</p>
+        </div>
+        <div class="block">
+            <form method="post">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                <button class="button is-success is-fullwidth is-medium mt-5" type="submit">Schedule Transaction
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

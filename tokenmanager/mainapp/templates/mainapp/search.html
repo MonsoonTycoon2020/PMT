@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Search transactions{% endblock %}
+{% block body %}
+  
+<div class="column">
+
+    <h1 class="title is-size-4">Search transactions</h1>
+  <form action="/search/" method="post">
+    {% csrf_token %}
+    <table class="table">{{ form.as_table }}</table>
+    <input type="submit" value="Submit" class="title is-size-4 button is-success">
+  </form>
+  <br>
+  {% for transaction in transactions %}
+    {{ transaction }}
+    <br><br>
+
+</div>
+  {% endfor %}
+{% endblock %}

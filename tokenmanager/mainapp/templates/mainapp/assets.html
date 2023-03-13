@@ -1,0 +1,49 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Assets{% endblock %}
+{% block body %}
+
+<div class="column">
+  <h1 class="title is-size-4">Assets list</h1>
+  {% if assets %}
+  <div class="table-container">
+  <table class="table">
+  <tr>
+    <th>ID/Frozen</th>
+    <th>Name/Unit</th>
+    <th>Total/Decimals</th>
+    <th>Url/Metadata</th>
+    <th>Creator</th>
+    <th>Manager/Reserve</th>
+    <th>Freeze/Clawback</th>
+  </tr>
+  {% for asset in assets %}
+  <tr>
+    <td>{{ asset.asset_id }}</td>
+    <td>{{ asset.name }}</td>
+    <td>{{ asset.total }}</td>
+    <td>{{ asset.url }}</td>
+    <td>{{ asset.creator }}</td>
+    <td>{{ asset.manager }}</td>
+    <td>{{ asset.freeze }}</td>
+  </tr>
+  <tr>
+    <td>{{ asset.frozen }}</td>
+    <td>{{ asset.unit }}</td>
+    <td>{{ asset.decimals }}</td>
+    <td>{{ asset.metadata }}</td>
+    <td>{{ asset.reserve }}</td>
+    <td>{{ asset.clawback }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+  {% else %}
+  <div class="notification">
+    <p class="title is-size-4">There are no assets.</p>
+  </div>
+  {% endif %}
+  <br>
+  <a href="/create-asset/" class="title is-size-4 button is-success">Create asset</a>
+
+</div>
+{% endblock %}

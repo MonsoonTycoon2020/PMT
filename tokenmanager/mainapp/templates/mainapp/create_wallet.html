@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Create wallet{% endblock %}
+{% block body %}
+
+<div class="column">
+  <h1 class="title is-size-4">Create wallet</h1>
+  <form action="/create-wallet/" method="post">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <input class="title is-size-4 button is-success" type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

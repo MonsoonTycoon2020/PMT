@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}Wallets{% endblock %}
+{% block body %}
+<div class="column">
+  <h1 class="title is-size-4">Wallet List</h1>
+  {% if wallets %}
+  <ul>
+  {% for wallet in wallets %}
+  <div class="box">
+    <span class="is-small has-text-grey-light">
+        <li><a href="/wallet/{{ wallet.wallet_id }}">{{ wallet.name }}</a></li>
+    </span>
+  </div>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <div class="notification">
+        <p class="title is-size-4">There are no wallets.</p>
+    </div>  
+  {% endif %}
+  <br>
+  <a class="title is-size-4 button is-success" href="/create-wallet/">Create Wallet</a>
+
+</div>
+{% endblock %}

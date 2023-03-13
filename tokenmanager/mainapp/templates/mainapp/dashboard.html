@@ -1,0 +1,57 @@
+{% extends 'mainapp/base.html' %}
+
+{% block body %}
+
+<div class="column">
+
+    <section class="box is-small mb-4">
+
+            <h1 class="title is-2">Payment Management System</h1>
+            <p class="subtitle is-4">
+                Token based payment system using Algorand's blockchain
+            </p>
+
+    </section>
+    {% for request in requests %}
+        <div class="box">
+            {{request.body}}
+            <span class="is-small has-text-grey-light">
+                ({{ request.date }} by {{ request.user.username }} for {{ request.receiver }})
+            </span>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="column is-one-third">
+    <div class="block">
+        <div class="block">
+            <h2 class="title is-4">Transaction Requests</p>
+        </div>
+        <div class="block">
+            <form method="post">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                    <button class="button is-success is-fullwidth is-medium mt-5"
+                        type="submit">Submit Request
+                    </button>
+            </form>
+        </div>
+    </div>
+    <div class="block">
+        <a href="{% url 'mainapp:profile_list' %} ">
+            <button class="button is-dark is-outlined is-fullwidth">
+                All Profiles
+            </button>
+        </a>
+    </div>
+    <div class="block">
+        <a href="{% url 'mainapp:profile' request.user.profile.id %} ">
+            <button class="button is-success is-light is-outlined is-fullwidth">
+                My Profile
+            </button>
+        </a>
+    </div>
+</div>
+
+{% endblock body %}
